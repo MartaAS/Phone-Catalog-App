@@ -4,17 +4,35 @@ var app = express()
 
 var phones = [{
   "id": 1,
-  "name": "Samsung 8",
+  "name": "Samsung Galaxy S8",
   "color": "Black",
   "price": 800.52,
-  "image": ""
+  "image": "",
+  "showDetails": false
 },
 {
   "id": 2,
   "name": "Iphone X",
   "color": "White",
   "price": 1000.25,
-  "image": ""
+  "image": "",
+  "showDetails": false
+},
+{
+  "id": 3,
+  "name": "Huawei",
+  "color": "White",
+  "price": 700,
+  "image": "",
+  "showDetails": false
+},
+{
+  "id": 4,
+  "name": "Sony",
+  "color": "White",
+  "price": 300,
+  "image": "",
+  "showDetails": false
 }
 ];
 
