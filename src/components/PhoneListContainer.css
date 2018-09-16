@@ -1,0 +1,9 @@
+.elements__list--container{
+  text-align: center;
+  padding: 0;
+  display: grid;
+  /* grid-template-columns: repeat(8, 1fr); */
+  grid-template-columns: 1fr;
+  /* grid-column-gap: 10px;
+  grid-row-gap: 10px;   */
+}

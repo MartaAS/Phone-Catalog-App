@@ -2,5 +2,36 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: black;
+  color: white;
 }
 
+.conteainer__header{
+  height: 38px;
+  background-color: black;
+  padding-top: 10px;
+}
+
+.header__image{
+  background-image: url(../images/logoweb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-size: contain;
+  margin-left: 20px;
+  padding-top: 24px;
+}
+
+.header__separated{
+  border: none;
+  margin: 0;
+  background-color: #fddb00;
+  height: 3px;
+}
+
+.section__title{
+  margin: 10px 0 0 0;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}

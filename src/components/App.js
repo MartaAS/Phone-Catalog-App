@@ -54,13 +54,18 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App" >
-        <header className="App-header">
-          <h1>Mobiles Catalog</h1>
+        <header className="conteainer__header">
+          <div className="header__image"></div>
         </header>
-        <div>
-          {this.printMobiles()}
-
-        </div>
+        <hr className="header__separated"></hr>
+        <section>
+          <div className="section__title">
+            <h1>Teléfonos móviles</h1>
+          </div>
+          <div>
+            {this.printMobiles()}
+          </div>
+        </section>
 
       </div>
     );
