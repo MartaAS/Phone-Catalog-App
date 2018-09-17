@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const FETCH_MOBILES_FULFILLED = 'FETCH_MOBILES_FULFILLED';
 
 export function fetchMobiles() {
@@ -14,12 +13,10 @@ export function fetchMobiles() {
   }
 }
 
-
 export const showMobileDetails = (mobileId) => ({
   type: 'SHOW-MOBILE-DETAILS',
   payload: mobileId
 })
-
 
 export const hideMobileDetails = () => (
   {
