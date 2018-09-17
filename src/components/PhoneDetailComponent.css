@@ -12,6 +12,12 @@
   background-color: white;
 }
 
+.element__name{
+  font-weight: bold;
+  color:#fddb00;
+  text-transform: uppercase;
+}
+
 .btn__moreDetails{
   font-weight: bold;
   width: 120px;
@@ -31,6 +37,21 @@
   transition: all .35s cubic-bezier(.25,.46,.45,.94);
 }
 
+.btn__close{
+  float: right;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px 10px 0 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    font-size: 22px;
+    font-weight: bold;
+}
 
 .showMoreDetails{
     -webkit-transition: all 0.5s ease-out;
@@ -38,7 +59,7 @@
     transition: all 0.5s ease-out;
     transform: translate(0%,0%);
     background-color: white;
-color: black;
+    color: black;
     height: 100%;
     width: 100%;
     top: 0; 
@@ -46,18 +67,69 @@ color: black;
 
   }
 
-
-
 .hideMoreDetails{
     /* display: none; */
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    transform: translate(-100%,0%);
+    transform: translate(0%,-100%);
     background-color: black;
     /* display: table; */
     height: 100%;
     width: 100%;
     top: 0;
     position: fixed;
+}
+
+.element__details--name{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 30px;
+}
+
+.element__details{
+  margin:0;
+  font-weight: bold;
+}
+.element__details--block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.element__details--description{
+  padding: 25px;
+}
+
+@media all and (min-width: 768px){
+  .showMoreDetails{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    margin: auto;
+  }
+  .hideMoreDetails{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    margin: auto;
+  }
+}
+
+
+@media all and (min-width: 768px){
+  .showMoreDetails{
+    width: 600px;
+  }
+  .hideMoreDetails{
+    width: 600px;
+  }
 }

@@ -43,11 +43,16 @@ export default class App extends React.Component {
       this.setState({
         selectedMobile: null
       })
+
+      // var element = document.getElementsByClassName('principal__container');
+      // element[0].classList.remove('opacity');
     }
     else {
       this.setState({
         selectedMobile: mobileId
       })
+      // var element = document.getElementsByClassName('principal__container');
+      // element[0].classList.add('opacity');
     }
   }
 
@@ -58,7 +63,7 @@ export default class App extends React.Component {
           <div className="header__image"></div>
         </header>
         <hr className="header__separated"></hr>
-        <section>
+        <section className="principal__container">
           <div className="section__title">
             <h1>Teléfonos móviles</h1>
           </div>

@@ -7,3 +7,15 @@
   /* grid-column-gap: 10px;
   grid-row-gap: 10px;   */
 }
+
+@media all and (min-width: 768px){
+  .elements__list--container{
+ grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media all and (min-width: 1024px){
+  .elements__list--container{
+ grid-template-columns: repeat(4, 1fr); 
+  }
+}
