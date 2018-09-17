@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PhoneListContainer from './PhoneListContainer.js';
-//import Spinner from './Spinner.js';
+import Spinner from './Spinner.js';
 
 
 export default class App extends React.Component {
@@ -59,6 +59,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    var isEmpty = this.state.mobiles.length === 0;
     return (
       <div className="App" >
         <header className="conteainer__header">
@@ -69,6 +70,7 @@ export default class App extends React.Component {
           <div className="section__title">
             <h1>Teléfonos móviles</h1>
           </div>
+          {isEmpty ? <Spinner /> : ''}
           <div>
             {this.printMobiles()}
           </div>

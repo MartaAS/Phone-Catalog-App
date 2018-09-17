@@ -35,3 +35,7 @@ body {
   padding-left: 18px;
   text-transform: uppercase;
 }
+
+.spinner__component{
+ text-align: center;
+}
