@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PhoneListContainer from './PhoneListContainer.js';
+//import Spinner from './Spinner.js';
 
 
 export default class App extends React.Component {
@@ -8,20 +9,21 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       mobiles: [],
-      selectedMobile: null
+      selectedMobile: null,
     };
   }
 
   componentDidMount() {
-    var url = 'http://localhost:8001/phone';
-
+    var url = 'https://api-catalog.herokuapp.com/phones';
     fetch(url)
       .then(response => response.json())
       .then(json => {
         this.setState({
-          mobiles: json
+          mobiles: json,
+          loading: true
         });
       });
+
   }
 
 
