@@ -30,7 +30,7 @@ export default class PhoneDetailComponent extends React.Component {
             </div>
           </div>
           <div className="element__details--description">
-            <p>Descripcion</p>
+            <p>Descripción</p>
             <p className="element__details">{this.props.description}</p>
           </div>
           {this.props.showDetails}
