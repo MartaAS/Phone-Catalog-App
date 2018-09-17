@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import PhoneListContainer from './PhoneListContainer.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { showMobileDetails } from './actions/actions.js'
+import { hideMobileDetails } from './actions/actions.js'
 import Spinner from './Spinner.js';
 
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       mobiles: [],
-      selectedMobile: null,
     };
   }
 
@@ -19,8 +21,7 @@ export default class App extends React.Component {
       .then(response => response.json())
       .then(json => {
         this.setState({
-          mobiles: json,
-          loading: true
+          mobiles: json
         });
       });
 
@@ -33,29 +34,9 @@ export default class App extends React.Component {
       <section className="container">
         <PhoneListContainer
           mobiles={allMobiles}
-          selectedMobile={this.state.selectedMobile}
-          onClick={this.handleClick}
         />
       </section>
     );
-  }
-
-  handleClick(mobileId) {
-    if (this.state.selectedMobile === mobileId) {
-      this.setState({
-        selectedMobile: null
-      })
-
-      // var element = document.getElementsByClassName('principal__container');
-      // element[0].classList.remove('opacity');
-    }
-    else {
-      this.setState({
-        selectedMobile: mobileId
-      })
-      // var element = document.getElementsByClassName('principal__container');
-      // element[0].classList.add('opacity');
-    }
   }
 
   render() {
@@ -81,3 +62,14 @@ export default class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+  showMobileDetails: () => dispatch(showMobileDetails()),
+  hideMobileDetails: () => dispatch(hideMobileDetails())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

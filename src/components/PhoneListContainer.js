@@ -1,12 +1,18 @@
 import React from 'react';
 import PhoneDetailComponent from './PhoneDetailComponent';
 import "./PhoneListContainer.css"
+import { connect } from "react-redux"
+import { showMobileDetails } from './actions/actions.js';
 
-export default class PhoneListContainer extends React.Component {
+class PhoneListContainer extends React.Component {
+  onShowMobileDetails = (id) => {
+    this.props.dispatch(showMobileDetails(id))
+  }
+
   render() {
+    console.log(this.props)
 
     const selectedMobile = this.props.selectedMobile
-    const onClick = this.props.onClick
 
     return (
       <ul className="elements__list--container">
@@ -21,7 +27,7 @@ export default class PhoneListContainer extends React.Component {
               image={image}
               description={description}
               showDetails={selectedMobile === id}
-              onClick={onClick}
+              onClick={this.onShowMobileDetails}
             />
           )
         }
@@ -29,3 +35,14 @@ export default class PhoneListContainer extends React.Component {
     )
   }
 }
+
+const connection = connect(state => {
+  console.log(state)
+  return {
+    selectedMobile: state.simpleReducer.selectedMobile
+  }
+})
+
+const PhoneListContainerConnected = connection(PhoneListContainer)
+
+export default PhoneListContainerConnected

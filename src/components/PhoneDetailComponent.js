@@ -1,10 +1,15 @@
 import React from 'react';
-
+import { connect } from "react-redux"
 import "./PhoneDetailComponent.css"
+import { hideMobileDetails } from './actions/actions.js';
 
-export default class PhoneDetailComponent extends React.Component {
+class PhoneDetailComponent extends React.Component {
   handleClick = () => {
     this.props.onClick(this.props.id)
+  }
+
+  onHideMobileDetails = (id) => {
+    this.props.dispatch(hideMobileDetails(id))
   }
   render() {
     return (
@@ -17,7 +22,7 @@ export default class PhoneDetailComponent extends React.Component {
         </button>
         </div >
         <div className={this.props.showDetails ? 'showMoreDetails' : 'hideMoreDetails'}>
-          <button className="btn__close" onClick={this.handleClick}>X</button>
+          <button className="btn__close" onClick={this.onHideMobileDetails}>X</button>
           <p className="element__details--name">{this.props.name}</p>
           <div className="element__details--block">
             <div>
@@ -44,3 +49,15 @@ export default class PhoneDetailComponent extends React.Component {
 
   }
 }
+
+
+const connection = connect(state => {
+  console.log(state)
+  return {
+    selectedMobile: state.simpleReducer.selectedMobile
+  }
+})
+
+const PhoneDetailComponentConnected = connection(PhoneDetailComponent)
+
+export default PhoneDetailComponentConnected
