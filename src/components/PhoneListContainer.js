@@ -2,11 +2,22 @@ import React from 'react';
 import PhoneDetailComponent from './PhoneDetailComponent';
 import "./PhoneListContainer.css"
 import { connect } from "react-redux"
-import { showMobileDetails } from './actions/actions.js';
+import { showMobileDetails, fetchMobiles } from './actions/actions.js';
+import { hideMobileDetails } from './actions/actions.js';
 
 class PhoneListContainer extends React.Component {
-  onShowMobileDetails = (id) => {
+  componentWillMount() {
+    this.props.dispatch(fetchMobiles())
+  }
+
+  handleShowMobileDetails = (id) => {
+    console.log("Debooo mostrar los detalles del telefono con id", id)
     this.props.dispatch(showMobileDetails(id))
+  }
+
+  handleHideMobileDetails = (id) => {
+    console.log("Debooo ocultar los detalles del telefono con id", id)
+    this.props.dispatch(hideMobileDetails())
   }
 
   render() {
@@ -27,7 +38,8 @@ class PhoneListContainer extends React.Component {
               image={image}
               description={description}
               showDetails={selectedMobile === id}
-              onClick={this.onShowMobileDetails}
+              onShowMobileDetails={this.handleShowMobileDetails}
+              onHideMobileDetails={this.handleHideMobileDetails}
             />
           )
         }
@@ -37,9 +49,10 @@ class PhoneListContainer extends React.Component {
 }
 
 const connection = connect(state => {
-  console.log(state)
+  console.log("El state:", state)
   return {
-    selectedMobile: state.simpleReducer.selectedMobile
+    selectedMobile: state.mobileReducer.selectedMobile,
+    mobiles: state.mobileReducer.listMobiles
   }
 })
 

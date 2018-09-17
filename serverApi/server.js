@@ -1,6 +1,9 @@
-var express = require('express')
-var http = require('http')
-var app = express()
+const express = require('express')
+const http = require('http')
+const app = express()
+const cors = require('cors')
+app.use(cors())
+
 
 var phones = [{
   "id": 1,

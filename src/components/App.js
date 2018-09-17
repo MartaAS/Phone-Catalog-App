@@ -8,39 +8,20 @@ import Spinner from './Spinner.js';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mobiles: [],
-    };
-  }
-
-  componentDidMount() {
-    var url = 'https://api-catalog.herokuapp.com/phones';
-    fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        this.setState({
-          mobiles: json
-        });
-      });
-
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     mobiles: [],
+  //     // isEmpty: true
+  //   };
+  // }
 
 
-  printMobiles() {
-    let allMobiles = this.state.mobiles;
-    return (
-      <section className="container">
-        <PhoneListContainer
-          mobiles={allMobiles}
-        />
-      </section>
-    );
-  }
 
   render() {
-    var isEmpty = this.state.mobiles.length === 0;
+    // console.log(this.state.isEmpty)
+    // var isEmpty = true;
+    //  console.log('is empty', this.state.mobiles.length)
     return (
       <div className="App" >
         <header className="conteainer__header">
@@ -51,9 +32,11 @@ class App extends React.Component {
           <div className="section__title">
             <h1>Teléfonos móviles</h1>
           </div>
-          {isEmpty ? <Spinner /> : ''}
+          {this.props.isLoadingMobiles ? <Spinner /> : ''}
           <div>
-            {this.printMobiles()}
+            <section className="container">
+              <PhoneListContainer />
+            </section>
           </div>
         </section>
 
@@ -63,13 +46,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = dispatch => ({
-  showMobileDetails: () => dispatch(showMobileDetails()),
-  hideMobileDetails: () => dispatch(hideMobileDetails())
+  isLoadingMobiles: state.mobileReducer.listMobiles.length === 0
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps)(App)

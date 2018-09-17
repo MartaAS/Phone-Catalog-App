@@ -1,5 +1,6 @@
 const initialState = {
-  selectedMobile: null
+  selectedMobile: null,
+  listMobiles: []
 }
 
 export default (state = initialState, action) => {
@@ -8,6 +9,8 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { selectedMobile: action.payload });
     case 'HIDE-MOBILE-DETAILS':
       return Object.assign({}, state, { selectedMobile: null });
+    case 'FETCH_MOBILES_FULFILLED':
+      return Object.assign({}, state, { listMobiles: action.payload });
 
     default:
       return state
