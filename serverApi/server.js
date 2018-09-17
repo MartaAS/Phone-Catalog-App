@@ -31,7 +31,7 @@ var phones = [{
 },
 {
   "id": 4,
-  "name": "Samsun Galaxy Note 9",
+  "name": "Samsung Galaxy Note 9",
   "color": "Negro",
   "price": "1259 €",
   "image": "https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/products/movil-samsung-galaxy-note-9-6.4-pulgadas-quad-hd-plus-1427344-1_l.png&width=480&height=480&quality=65&imgType=product",
