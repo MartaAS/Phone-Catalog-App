@@ -1,6 +1,6 @@
-#Phones Catalog Mobiles (MM!)
+Phones Catalog Mobiles (MM!)
 
-##app whith React, Redux, Express and Axios.
+App whith React, Redux, Express and Axios.
 
 
 
@@ -8,7 +8,7 @@ Check that you have node installed, in case you do not have it, install [<NODE](
 
 
 
-B<Clone my respository> [here](https://github.com/MartaAS/phone-catalog-app)
+Clone my respository [here](https://github.com/MartaAS/phone-catalog-app)
 
 
 Install the dependencies:
