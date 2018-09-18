@@ -4,7 +4,6 @@ const app = express()
 const cors = require('cors')
 app.use(cors())
 
-
 var phones = [{
   "id": 1,
   "name": "Samsung Galaxy J7 (2017)",

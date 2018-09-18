@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from "react-redux"
 import "./PhoneDetailComponent.css"
-import { hideMobileDetails } from './actions/actions.js';
 
 export default class PhoneDetailComponent extends React.Component {
   onHideMobileDetails = () => {
@@ -41,25 +39,9 @@ export default class PhoneDetailComponent extends React.Component {
             <p className="element__details">{this.props.description}</p>
           </div>
           {this.props.showDetails}
-
         </div>
         <hr className="title__line" />
-
-
       </li >
     )
-
   }
 }
-/*
-
-const connection = connect(state => {
-  console.log(state)
-  return {
-    selectedMobile: state.simpleReducer.selectedMobile
-  }
-})
-
-const PhoneDetailComponentConnected = connection(PhoneDetailComponent)
-
-export default PhoneDetailComponentConnected*/

@@ -11,18 +11,14 @@ class PhoneListContainer extends React.Component {
   }
 
   handleShowMobileDetails = (id) => {
-    console.log("Debooo mostrar los detalles del telefono con id", id)
     this.props.dispatch(showMobileDetails(id))
   }
 
   handleHideMobileDetails = (id) => {
-    console.log("Debooo ocultar los detalles del telefono con id", id)
     this.props.dispatch(hideMobileDetails())
   }
 
   render() {
-    console.log(this.props)
-
     const selectedMobile = this.props.selectedMobile
 
     return (
@@ -49,7 +45,6 @@ class PhoneListContainer extends React.Component {
 }
 
 const connection = connect(state => {
-  console.log("El state:", state)
   return {
     selectedMobile: state.mobileReducer.selectedMobile,
     mobiles: state.mobileReducer.listMobiles

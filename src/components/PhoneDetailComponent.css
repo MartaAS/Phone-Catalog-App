@@ -70,13 +70,11 @@
   }
 
 .hideMoreDetails{
-    /* display: none; */
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     transform: translate(0%,-100%);
     background-color: black;
-    /* display: table; */
     height: 100%;
     width: 100%;
     top: 0;
