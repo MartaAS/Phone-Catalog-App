@@ -13,19 +13,21 @@ Clone my respository [here](https://github.com/MartaAS/phone-catalog-app)
 
 Install the dependencies:
 
-```<npm install>```
+```npm install```
 
 
 To start the application:
+Launching the app is done in the root  of the project.
 
-```<npm start>.```
+```npm start```
 
 
 To run the server:
+In order to launch the backend we open the folder called backend/serverApi and we execute the command. 
 
-```<npm run server>```
+```node server.js```
 
 
 
 It is very  important that both the app and the server are running in the terminal.
-In order to launch the backend we open the folder called backend/serverApi and we execute the command. Launching the app is done in the root  of the project.
+
