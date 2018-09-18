@@ -4,7 +4,7 @@ App whith React, Redux, Express and Axios.
 
 
 
-Check that you have node installed, in case you do not have it, install [<NODE](https://nodejs.org/en/).
+Check that you have node installed, in case you do not have it, install [NODE](https://nodejs.org/en/).
 
 
 
